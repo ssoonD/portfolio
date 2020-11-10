@@ -1,14 +1,9 @@
 :root {
   /* Color */
   --color-white: #fff;
-  --color-dark-white: #e7e6e6;
+  --color-dark-white: #f7f7f7;
   --color-yellow: #ffff00;
   --color-black: rgb(51, 56, 61);
-
-  /* Font size */
-  --font-large: 15vh;
-  --font-medium: 3.5vh;
-  --font-regular: 2vh;
 
   /* Font weight */
   --weight-bold: 700;
@@ -22,27 +17,41 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 14px;
+}
+
 body {
-  background: var(--color-black);
+  background: var(--color-white);
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 
 h1 {
-  font-size: var(--font-large);
+  font-size: 12rem;
   font-weight: var(--weight-bold);
   color: var(--color-white);
-  margin: 1.8em 0px 0.5em;
 }
 
 h3 {
-  font-size: var(--font-regular);
+  font-size: 2em;
   font-weight: var(--weight-regular);
   color: var(--color-white);
-  margin: 5em 0 10em;
 }
 
-.project__description h3{
+.introduction {
+  height: 40em;
+  background: #C9D6FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0 0 10em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project__description h3 {
   margin: 15px 0;
 }
 
@@ -54,19 +63,20 @@ a:-webkit-any-link {
   cursor: pointer;
 }
 
-.works {
+.protfolio {
   text-align: center;
 }
 
-.work__projects {
+.projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   opacity: 1;
   transition: all var(--animation-duration) ease-out;
+  text-align: center;
 }
 
-.work__projects.animation-out {
+.projects.animation-out {
   opacity: 0;
   transform: scale(0.96) translateY(10px);
 }
@@ -75,8 +85,9 @@ a:-webkit-any-link {
   position: relative;
   width: 560px;
   height: 500px;
-  margin: 5px;
+  margin: 10px;
   background-color: var(--color-dark-white);
+  box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,11 +118,11 @@ a:-webkit-any-link {
 }
 
 .project__description h3 {
-  font-size: var(--font-medium);
+  font-size: 3em;
 }
 
 span {
-  font-size: var(--font-regular);
+  font-size: 1.5em;
 }
 
 .project:hover .project__description {
@@ -135,20 +146,29 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 4rem;
+  height: 6rem;
   color: var(--color-black);
-  background:var(--color-dark-white);
+  background: #C9D6FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 10em 0 0;
   font-weight: var(--weight-bold);
 }
 
 @media screen and (max-width: 768px) {
-  :root{
-    --font-large: 30px;
-    --font-regular: 16px;
-  }
+ html {
+   font-size: 10px;
+ }
+ 
+ h1 {
+   font-size: 7rem;
+ }
 
-  .project { 
+ .introduction h3 {
+   font-size: 1.5em;
+ }
+
+  .project {
     flex-grow: 1;
   }
 }
